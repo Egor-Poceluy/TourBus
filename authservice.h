@@ -10,7 +10,7 @@ class AuthService : public QObject
 
 public:
     enum class UserRole {
-        Guest,
+        Guest = 1,
         Customer,
         Admin
     };

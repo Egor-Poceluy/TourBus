@@ -4,6 +4,7 @@
 #include "authwidget.h"
 #include "mainwidget.h"
 #include "adminwidget.h"
+#include <regwidget.h>
 #include "eventtypes.h"
 #include "databaseconnection.h"
 
@@ -29,9 +30,11 @@ private:
     Ui::MainWindow *ui;
     void handleLogin();
     void handleLogout();
+    void handleRegistration();
 
     QStackedWidget *stackedWidget;
     AuthWidget *authWidget = nullptr;
+    RegWidget *regWidget = nullptr;
     MainWidget *mainwidget = nullptr;
     AdminWidget *adminWidget = nullptr;
 

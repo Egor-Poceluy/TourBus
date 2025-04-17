@@ -12,6 +12,9 @@ class AuthWidget : public QWidget
 public:
     explicit AuthWidget(QWidget *parent = nullptr);
 
+signals:
+    void needRegistration();
+
 private:
     AuthService *authService = nullptr;
 

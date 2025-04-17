@@ -11,6 +11,9 @@ MainWidget::MainWidget(QWidget *parent)
     QPushButton *bookingButton = new QPushButton("Забронировать тур", this);
     connect(bookingButton, &QPushButton::clicked, this, &MainWidget::bookingButton_clicked);
 
+    yourTours = new QTableWidget(this);
+
+    layout->addWidget(yourTours);
     layout->addWidget(bookingButton);
 }
 

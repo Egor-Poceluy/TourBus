@@ -4,6 +4,7 @@
 #include "bookingwindow.h"
 
 #include <QWidget>
+#include <QTableWidget>
 
 class MainWidget : public QWidget
 {
@@ -15,6 +16,8 @@ public slots:
     void bookingButton_clicked();
 
 private:
+    QTableWidget *yourTours;
+
     BookingWindow *bookingWindow = nullptr;
 };
 

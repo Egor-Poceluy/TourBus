@@ -25,6 +25,7 @@ bool AuthService::registerUser(const QString &username, const QString &password,
         emit authStatus({EventType::LoginError, "Ошибка регистрации"});
         return false;
     }
+    emit authStatus({EventType::LoginSuccess, "Успешная регистрация"});
     return true;
 }
 

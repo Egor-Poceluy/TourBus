@@ -12,21 +12,27 @@ SOURCES += \
     adminwidget.cpp \
     authservice.cpp \
     authwidget.cpp \
+    availabletourswidget.cpp \
     bookingwindow.cpp \
     databaseconnection.cpp \
+    enterdatawidget.cpp \
     main.cpp \
     mainwidget.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    regwidget.cpp
 
 HEADERS += \
     adminwidget.h \
     authservice.h \
     authwidget.h \
+    availabletourswidget.h \
     bookingwindow.h \
     databaseconnection.h \
+    enterdatawidget.h \
     eventtypes.h \
     mainwidget.h \
-    mainwindow.h
+    mainwindow.h \
+    regwidget.h
 
 FORMS += \
     bookingwindow.ui \

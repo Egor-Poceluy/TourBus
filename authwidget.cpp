@@ -15,13 +15,26 @@ AuthWidget::AuthWidget(QWidget *parent)
     password->setPlaceholderText("Пароль...");
     password->setEchoMode(QLineEdit::Password);
 
+
+    QHBoxLayout *buttonLayout = new QHBoxLayout(this);
+
     QPushButton *loginButton = new QPushButton("Войти", this);
     connect(loginButton, &QPushButton::clicked, this, [this]() {
         authService = &AuthService::getInstance();
         authService->login(username->text(), password->text());
     });
 
+    QPushButton *regButton = new QPushButton("Зарегистрироваться", this);
+    connect(regButton, &QPushButton::clicked, this, [this]() {
+        emit needRegistration();
+    });
+
+
+    buttonLayout->addWidget(loginButton);
+    buttonLayout->addWidget(regButton);
+
+
     layout->addWidget(username);
     layout->addWidget(password);
-    layout->addWidget(loginButton);
+    layout->addLayout(buttonLayout);
 }

@@ -14,13 +14,18 @@ MainWindow::MainWindow(QWidget *parent)
     connect(&connection, &DatabaseConnection::connectionStatus, this, &MainWindow::eventHandler);
     connect(&AuthService::getInstance(), &AuthService::authStatus, this, &MainWindow::eventHandler);
 
+    //!!!!!!!!!!!!!!!!!!!!
+    connect(authWidget, &AuthWidget::needRegistration, this, &MainWindow::handleRegistration);
+
     stackedWidget = new QStackedWidget(this);
 
     authWidget = new AuthWidget(this);
+    //regWidget = new RegWidget(this);
     mainwidget = new MainWidget(this);
     adminWidget = new AdminWidget(this);
 
     stackedWidget->addWidget(authWidget);
+    stackedWidget->addWidget(regWidget);
     stackedWidget->addWidget(mainwidget);
     //stackedWidget->addWidget(adminWidget);
 
@@ -60,13 +65,19 @@ void MainWindow::eventHandler(const Event &event)
 
 void MainWindow::handleLogin()
 {
-    stackedWidget->setCurrentIndex(1);
+    stackedWidget->setCurrentIndex(2);
 }
 
 
 void MainWindow::handleLogout()
 {
     stackedWidget->setCurrentIndex(0);
+}
+
+
+void MainWindow::handleRegistration()
+{
+    stackedWidget->setCurrentIndex(1);
 }
 
 
